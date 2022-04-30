@@ -1,0 +1,13 @@
+.genericFormContainer {
+    
+}
+
+.formActions {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
+
+.submit {
+    width: 100%;
+}

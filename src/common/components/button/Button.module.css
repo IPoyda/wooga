@@ -1,0 +1,27 @@
+.primaryButton {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0.4px;
+    text-align: center;
+    user-select: none;
+    border: 1px solid transparent;
+    color: #fff;
+
+    position: relative;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+
+.primaryButton:enabled:hover,
+.primaryButton:enabled:focus {
+    background-color: var(--highlight-color);
+    color: #fff;
+}
+
+.primaryButton:enabled {
+    color: #fff;
+}
