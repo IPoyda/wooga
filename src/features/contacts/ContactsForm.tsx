@@ -1,10 +1,16 @@
 import React, {FC, useCallback} from 'react';
 import {FormData} from "../../common/types";
 import styles from "./ContatcsForm.module.css";
-import GenericForm from "../../common/components/form/GenericForm";
+import {
+    GenericFormActions,
+    GenericFormBody,
+    GenericFormContainer,
+    GenericFormHeader
+} from "../../common/components/form/GenericForm";
 import TextInput from "../../common/components/text-field/TextInput";
 import {patternValidator} from "../../common/utill";
 import {VALIDATION_REGEXPS} from "../../common/constants";
+import Button from "../../common/components/button/Button";
 
 const fields = [
     {
@@ -25,21 +31,29 @@ const fields = [
 ];
 
 const ContactsForm: FC = () => {
-    const handleSubmit = useCallback((formData: FormData) => {}, []);
+    const handleSubmit = useCallback((formData: FormData) => {
+        console.log(formData);
+    }, []);
 
     return (
         <div className={styles.contactsFormContainer}>
-            <GenericForm onSubmit={handleSubmit}>
-                {fields.map((field: typeof fields[0]) => (
-                    <TextInput
-                        key={field.name}
-                        name={field.name}
-                        label={field.label}
-                        errorMessage={field.errorMessage}
-                        validators={field.validators}
-                    />
-                ))}
-            </GenericForm>
+            <GenericFormContainer onSubmit={handleSubmit}>
+                <GenericFormHeader label={"Contacts Form"}/>
+                <GenericFormBody>
+                    {fields.map((field: typeof fields[0]) => (
+                        <TextInput
+                            key={field.name}
+                            name={field.name}
+                            label={field.label}
+                            errorMessage={field.errorMessage}
+                            validators={field.validators}
+                        />
+                    ))}
+                </GenericFormBody>
+                <GenericFormActions>
+                    <Button type="submit" classes={{root: styles.submit}}>{"Submit"}</Button>
+                </GenericFormActions>
+            </GenericFormContainer>
         </div>
     );
 };

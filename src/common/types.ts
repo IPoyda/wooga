@@ -1,6 +1,7 @@
 export type Validator = (value: string | number | null | undefined) => boolean;
 
 export type FormField = {
+    name: string;
     showError?: boolean;
     validators?: Array<Validator>;
 }

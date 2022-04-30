@@ -1,3 +1,7 @@
 .contactsFormContainer {
     width: 350px;
 }
+
+.submit {
+    width: 100%;
+}
