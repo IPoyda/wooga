@@ -32,7 +32,7 @@ const fields = [
 
 const ContactsForm: FC = () => {
     const handleSubmit = useCallback((formData: FormData) => {
-        console.log(formData);
+        alert(JSON.stringify(formData, null, 2));
     }, []);
 
     return (
